@@ -38,5 +38,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist # Carpeta que contiene el build de Vite
-          branch: gh-pages # La acción creará esta rama sola si no existe
-          token: ${{ secrets.GH_TOKEN }}
+          branch: gh-pages 
+          token: ${{ secrets.GITHUB_TOKEN }}
