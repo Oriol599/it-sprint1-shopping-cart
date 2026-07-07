@@ -1,0 +1,127 @@
+/* 1. Configuración de Base y Tipografía */
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger-color: #ef4444;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+/* 2. Contenedor Principal en Dos Columnas */
+.main-container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.column {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* 3. Tarjetas de Productos (Grid Interno) */
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.product-card p {
+  color: var(--text-muted);
+  font-weight: bold;
+  margin: 0 0 1rem 0;
+}
+
+/* 4. Lista del Carrito */
+#cart-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-container li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+}
+
+/* 5. Botones Estilizados */
+button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-to-cart-btn {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--primary-hover);
+}
+
+.remove-from-cart-btn {
+  background-color: transparent;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  padding: 0.25rem 0.5rem;
+}
+
+.remove-from-cart-btn:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+}
