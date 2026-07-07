@@ -1,5 +1,11 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './', // Esto asegura que las rutas en gh-pages sean relativas
+  // Configuración para el despliegue en GitHub Pages
+  base: './',
+  
+  // Configuración unificada para Vitest
+  test: {
+    environment: 'jsdom',
+  },
 });
