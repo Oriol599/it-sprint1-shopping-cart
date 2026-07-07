@@ -1,29 +1,34 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shopping Cart</title>
-    <script type="module" crossorigin src="./assets/index-CzeCY9Sg.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-x1XGuNl0.css">
-  </head>
-  <body>
-    <header>
-      <h1>Shopping Cart</h1>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+  <!-- Vinculamos el CSS usando rutas de Vite -->
+  <script type="module" crossorigin src="./assets/index-Xg1dUOTn.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-CIamfJk7.css">
+</head>
+<body>
 
-    <main>
-      <!-- Catalog Section -->
-      <h2>Products</h2>
+  <h1>Mi Carrito de Compras</h1>
+
+  <!-- Envolvemos todo en el contenedor principal flexible -->
+  <div class="main-container">
+    
+    <!-- Columna Izquierda: Catálogo -->
+    <div class="column">
+      <h2>Productos Disponibles</h2>
       <div id="product-list"></div>
+    </div>
 
-      <!-- Cart Section -->
-      <h2>Shopping Cart</h2>
+    <!-- Columna Derecha: El Carrito -->
+    <div class="column">
+      <h2>Tu Carrito</h2>
       <div id="cart-container"></div>
-    </main>
+    </div>
 
-    <footer>
-      <p>&copy; 2026 - Shopping Cart</p>
-    </footer>
-  </body>
+  </div>
+
+</body>
 </html>
+
