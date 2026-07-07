@@ -1,0 +1,11 @@
+(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var e=[{id:1,name:`Laptop`,price:999},{id:2,name:`Smartphone`,price:499},{id:3,name:`Headphones`,price:89}],t=[],n=document.getElementById(`product-list`),r=document.getElementById(`cart-container`);function i(){n.innerHTML=``,e.forEach(e=>{let t=document.createElement(`div`);t.className=`product-card`,t.innerHTML=`
+      <h3>${e.name}</h3>
+      <p>Price: $${e.price}</p>
+      <button class="add-to-cart-btn" data-id="${e.id}">Add to Cart</button>
+    `,n.appendChild(t)}),c()}function a(){if(r.innerHTML=``,t.length===0){r.innerHTML=`<p>The cart is empty</p>`;return}let e=document.createElement(`ul`),n=0;t.forEach(t=>{let r=t.price*t.quantity;n+=r;let i=document.createElement(`li`);i.innerHTML=`
+      <strong>${t.name}</strong> - 
+      Qty: ${t.quantity} | 
+      Unit Price: $${t.price} | 
+      Total: $${r}
+      <button class="remove-from-cart-btn" data-id="${t.id}">Remove</button>
+    `,e.appendChild(i)});let i=document.createElement(`p`);i.innerHTML=`<strong>Total Price: $${n}</strong>`,r.appendChild(e),r.appendChild(i),l()}function o(n){let r=e.find(e=>e.id===n),i=t.find(e=>e.id===n);i?i.quantity+=1:t.push({...r,quantity:1}),a()}function s(e){let n=t.find(t=>t.id===e);n&&(n.quantity>1?--n.quantity:t=t.filter(t=>t.id!==e)),a()}function c(){document.querySelectorAll(`.add-to-cart-btn`).forEach(e=>{e.addEventListener(`click`,e=>{o(parseInt(e.target.getAttribute(`data-id`)))})})}function l(){document.querySelectorAll(`.remove-from-cart-btn`).forEach(e=>{e.addEventListener(`click`,e=>{s(parseInt(e.target.getAttribute(`data-id`)))})})}i(),a();
